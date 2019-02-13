@@ -1,0 +1,179 @@
+#NEXUS
+
+[&creator=None,description=None]
+BEGIN TAXA;
+    DIMENSIONS NTAX=53;
+    TAXLABELS
+        Glandulocauda_melanopleura
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065352]
+        Gephyrocharax_sinuensis
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065038]
+        Gephyrocharax_whaleri
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065046]
+        Gephyrocharax_chocoensis
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065049]
+        Diapoma_speculiferum
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038408]
+        'Hysteronotus sp. (Weitzman and Menezes 1998)'
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065080]
+        Gephyrocharax_melanocheir
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065043]
+        Mimagoniates_sylvicola
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065353]
+        Argopleura_diquensis
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065769]
+        Xenurobrycon_pteropus
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038419]
+        Xenurobrycon_macropus
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065870]
+        'Tyttocharax sp. (Burns et al 1995)'
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065894]
+        'Argopleura sp. (Weitzman and Fink 1985)'
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065767]
+        'Gephyrocharax sp. (Weitzman and Fink 1985)'
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065045]
+        Hysteronotus_megalostomus
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065081]
+        Gephyrocharax_venezuelae
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065044]
+        Argopleura_magdalenensis
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065768]
+        Planaltina_myersi
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038423]
+        Gephyrocharax_caucanus
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065047]
+        Scopaeocharax_rhinodus
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065005]
+        Landonia_latidens
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065918]
+        Pterobrycon_landoni
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065650]
+        'Acrobrycon sp. (Burns et al 1995)'
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065932]
+        Scopaeocharax_atopodus
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065006]
+        Diapoma_terofali
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038407]
+        Gephyrocharax_major
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065048]
+        Chrysobrycon_hesperus
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065099]
+        Chrysobrycon_myersi
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065100]
+        Gephyrocharax_valencia
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065039]
+        'Scopaeocharax sp. (Burns et al 1995)'
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065007]
+        Acrobrycon_ipanquianus
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065931]
+        Mimagoniates_inequalis
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038428]
+        Xenurobrycon_heterodon
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065868]
+        Mimagoniates_lateralis
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038432]
+        Pseudocorynopoma_heterandria
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038417]
+        Mimagoniates_microlepis
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038429]
+        Xenurobrycon_polyancistrus
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065869]
+        'Tyttocharax sp. A (Weitzman and Fink 1985)'
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065897]
+        Phenacobrycon_henni
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065097]
+        'Tyttocharax sp. B (Weitzman and Fink 1985)'
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065895]
+        Pseudocorynopoma_doriae
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038416]
+        Tyttocharax_madeirae
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038414]
+        Glandulocauda_melanogenys
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038426]
+        Mimagoniates_rheocharis
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038430]
+        Pterobrycon_myrnae
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065649]
+        Gephyrocharax_intermedius
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065040]
+        Gephyrocharax_atracaudatus
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038411]
+        Iotabrycon_praecox
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065441]
+        Mimagoniates_barberi
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065355]
+        Ptychocharax_rhyacophila
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065920]
+        Corynopoma_riisei
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038434]
+        Argopleura_chocoensis
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065770]
+        'Planaltina sp. (Burns et al 1995)'
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065443]
+  ;
+END;
+
+BEGIN CHARACTERS;
+    DIMENSIONS NCHAR=10;
+    FORMAT DATATYPE=STANDARD SYMBOLS="10" EQUATE="set(['1 and 0=(10)', '0 and 1=(01)'])";
+    MATRIX
+        Glandulocauda_melanopleura                        1 and 011 and 00 and 11 and 01 and 0None1 and 00 and 11
+        Gephyrocharax_sinuensis                           111 and 011101 and 011
+        Gephyrocharax_whaleri                             111 and 011101 and 011
+        Gephyrocharax_chocoensis                          111 and 011101 and 011
+        Diapoma_speculiferum                              1 and 0110 and 11 and 01 and 001 and 00 and 11
+        'Hysteronotus sp. (Weitzman and Menezes 1998)'    111 and 011101 and 011
+        Gephyrocharax_melanocheir                         111 and 011101 and 011
+        Mimagoniates_sylvicola                            1 and 011 and 00 and 11 and 01 and 011 and 00 and 11
+        Argopleura_diquensis                              111 and 011101 and 011
+        Xenurobrycon_pteropus                             1 and 001 and 00 and 11 and 01 and 001 and 00 and 10
+        Xenurobrycon_macropus                             1 and 001 and 00 and 11 and 01 and 001 and 00 and 10
+        'Tyttocharax sp. (Burns et al 1995)'              1 and 001 and 00 and 11 and 01 and 001 and 00 and 10
+        'Argopleura sp. (Weitzman and Fink 1985)'         111 and 011101 and 011
+        'Gephyrocharax sp. (Weitzman and Fink 1985)'      111 and 011101 and 011
+        Hysteronotus_megalostomus                         111 and 011101 and 011
+        Gephyrocharax_venezuelae                          111 and 011101 and 011
+        Argopleura_magdalenensis                          111 and 011101 and 011
+        Planaltina_myersi                                 11111101 and 011
+        Gephyrocharax_caucanus                            111 and 011101 and 011
+        Scopaeocharax_rhinodus                            1 and 001 and 00 and 11 and 01 and 001 and 00 and 10
+        Landonia_latidens                                 111 and 011101 and 011
+        Pterobrycon_landoni                               111 and 011101 and 011
+        'Acrobrycon sp. (Burns et al 1995)'               11111101 and 011
+        Scopaeocharax_atopodus                            1 and 001 and 00 and 11 and 01 and 001 and 00 and 10
+        Diapoma_terofali                                  1 and 0110 and 11 and 01 and 001 and 00 and 11
+        Gephyrocharax_major                               111 and 011101 and 011
+        Chrysobrycon_hesperus                             111 and 011101 and 011
+        Chrysobrycon_myersi                               111 and 011101 and 011
+        Gephyrocharax_valencia                            111 and 011101 and 011
+        'Scopaeocharax sp. (Burns et al 1995)'            1 and 001 and 00 and 11 and 01 and 001 and 00 and 10
+        Acrobrycon_ipanquianus                            11111101 and 011
+        Mimagoniates_inequalis                            1 and 011 and 00 and 11 and 01 and 011 and 00 and 11
+        Xenurobrycon_heterodon                            1 and 001 and 00 and 11 and 01 and 001 and 00 and 10
+        Mimagoniates_lateralis                            1 and 011 and 00 and 11 and 01 and 011 and 00 and 11
+        Pseudocorynopoma_heterandria                      111 and 011101 and 011
+        Mimagoniates_microlepis                           1 and 011 and 00 and 11 and 01 and 011 and 00 and 11
+        Xenurobrycon_polyancistrus                        1 and 001 and 00 and 11 and 01 and 001 and 00 and 10
+        'Tyttocharax sp. A (Weitzman and Fink 1985)'      1 and 001 and 00 and 11 and 01 and 001 and 00 and 10
+        Phenacobrycon_henni                               111 and 011101 and 011
+        'Tyttocharax sp. B (Weitzman and Fink 1985)'      1 and 001 and 00 and 11 and 01 and 001 and 00 and 10
+        Pseudocorynopoma_doriae                           111 and 011101 and 011
+        Tyttocharax_madeirae                              1 and 001 and 00 and 11 and 01 and 001 and 00 and 10
+        Glandulocauda_melanogenys                         1 and 011 and 00 and 11 and 01 and 0None1 and 00 and 11
+        Mimagoniates_rheocharis                           1 and 011 and 00 and 11 and 01 and 011 and 00 and 11
+        Pterobrycon_myrnae                                111 and 011101 and 011
+        Gephyrocharax_intermedius                         111 and 011101 and 011
+        Gephyrocharax_atracaudatus                        111 and 011101 and 011
+        Iotabrycon_praecox                                1 and 011 and 00 and 11 and 01 and 001 and 00 and 11
+        Mimagoniates_barberi                              1 and 011 and 00 and 11 and 01 and 011 and 00 and 11
+        Ptychocharax_rhyacophila                          111 and 011101 and 011
+        Corynopoma_riisei                                 111 and 011101 and 011
+        Argopleura_chocoensis                             111 and 011101 and 011
+        'Planaltina sp. (Burns et al 1995)'               11111101 and 011
+    ;
+END;
+
+
+BEGIN TREES;
+END;
+

@@ -1,0 +1,83 @@
+#NEXUS
+
+[&creator=None,description=None]
+BEGIN TAXA;
+    DIMENSIONS NTAX=21;
+    TAXLABELS
+        Odontostilbe_dialeptura
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065575]
+        Acinocheirodon_melanogramma
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038118]
+        Macropsobrycon_uruguayanae
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038133]
+        Compsura_heterura
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038106]
+        Prodontocharax_melanotus
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038138]
+        Spintherobolus_papilliferus
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065893]
+        Megacheirodon_unicus
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065636]
+        'Genus C species C (Malabarba 1998)'
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065788]
+        Heterocheirodon
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038109]
+        Odontostilbe_mitoptera
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065571]
+        Compsura_gorgonae
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065877]
+        Kolpotocheirodon_theloura
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038108]
+        Odontostilbe_pequira
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065585]
+        Cheirodon_pisciculus
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065747]
+        Odontostilbe_fugitiva
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038128]
+        Cheirodontops_geayi
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0065095]
+        Nanocheirodon
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038140]
+        Pseudocheirodon_arnoldi
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038135]
+        Aphyocheirodon_hemigrammus
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038120]
+        Serrapinnus
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038111]
+        Saccoderma_melanostigma
+[&taxonID=http://purl.obolibrary.org/obo/VTO_0038124]
+  ;
+END;
+
+BEGIN CHARACTERS;
+    DIMENSIONS NCHAR=4;
+    FORMAT DATATYPE=STANDARD SYMBOLS="10" EQUATE="set(['1 and 0=(10)', '0 and 1=(01)'])";
+    MATRIX
+        Odontostilbe_dialeptura                 11 and 010
+        Acinocheirodon_melanogramma             11 and 010 and 1
+        Macropsobrycon_uruguayanae              11 and 010 and 1
+        Compsura_heterura                       11 and 000 and 1
+        Prodontocharax_melanotus                11 and 000 and 1
+        Spintherobolus_papilliferus             0100
+        Megacheirodon_unicus                    NoneNone0
+        'Genus C species C (Malabarba 1998)'    11 and 000
+        Heterocheirodon                         11 and 000
+        Odontostilbe_mitoptera                  11 and 000
+        Compsura_gorgonae                       11 and 000
+        Kolpotocheirodon_theloura               11 and 010
+        Odontostilbe_pequira                    11 and 000
+        Cheirodon_pisciculus                    11 and 000
+        Odontostilbe_fugitiva                   11 and 000
+        Cheirodontops_geayi                     11 and 000
+        Nanocheirodon                           11 and 000
+        Pseudocheirodon_arnoldi                 11 and 000
+        Aphyocheirodon_hemigrammus              11 and 000
+        Serrapinnus                             11 and 000
+        Saccoderma_melanostigma                 11 and 010
+    ;
+END;
+
+
+BEGIN TREES;
+END;
+

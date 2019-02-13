@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nexml xmlns="http://www.nexml.org/2009" xmlns:dc="http://purl.org/dc/terms/" xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:obo="http://purl.obolibrary.org/obo/" xmlns:ps="http://vocab.phenoscape.org/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="0.9" xsi:schemaLocation="http://www.nexml.org/2009 http://www.nexml.org/2009/nexml.xsd http://www.bioontologies.org/obd/schema/pheno http://purl.org/phenoscape/phenoxml.xsd">
+  <meta xsi:type="LiteralMeta" property="dc:creator" />
+  <meta xsi:type="LiteralMeta" property="dc:description"><![CDATA[Generated from the Phenoscape Knowledgebase on 2018-9-26 by Ontotrace query:
+* taxa: <http://purl.obolibrary.org/obo/VTO_0038106> or <http://purl.obolibrary.org/obo/VTO_0038108> or <http://purl.obolibrary.org/obo/VTO_0038109> or <http://purl.obolibrary.org/obo/VTO_0038111> or <http://purl.obolibrary.org/obo/VTO_0038118> or <http://purl.obolibrary.org/obo/VTO_0038120> or <http://purl.obolibrary.org/obo/VTO_0038124> or <http://purl.obolibrary.org/obo/VTO_0038128> or <http://purl.obolibrary.org/obo/VTO_0038133> or <http://purl.obolibrary.org/obo/VTO_0038135> or <http://purl.obolibrary.org/obo/VTO_0038138> or <http://purl.obolibrary.org/obo/VTO_0038140> or <http://purl.obolibrary.org/obo/VTO_0065095> or <http://purl.obolibrary.org/obo/VTO_0065571> or <http://purl.obolibrary.org/obo/VTO_0065575> or <http://purl.obolibrary.org/obo/VTO_0065585> or <http://purl.obolibrary.org/obo/VTO_0065636> or <http://purl.obolibrary.org/obo/VTO_0065747> or <http://purl.obolibrary.org/obo/VTO_0065788> or <http://purl.obolibrary.org/obo/VTO_0065877> or <http://purl.obolibrary.org/obo/VTO_0065893>
+* entities: <http://purl.obolibrary.org/obo/UBERON_0001062>]]></meta>
+  <otus id="tfc794139-a39f-4f2a-aa2e-b611ac9f9166">
+    <otu id="VTO_0065575" label="Odontostilbe dialeptura" about="#VTO_0065575">
+      <meta xsi:type="ResourceMeta" rel="dwc:taxonID" href="http://purl.obolibrary.org/obo/VTO_0065575" />
+    </otu>
+    <otu id="VTO_0038118" label="Acinocheirodon melanogramma" about="#VTO_0038118">
+      <meta xsi:type="ResourceMeta" rel="dwc:taxonID" href="http://purl.obolibrary.org/obo/VTO_0038118" />
+    </otu>
+    <otu id="VTO_0038133" label="Macropsobrycon uruguayanae" about="#VTO_0038133">
+      <meta xsi:type="ResourceMeta" rel="dwc:taxonID" href="http://purl.obolibrary.org/obo/VTO_0038133" />
+    </otu>
+    <otu id="VTO_0038106" label="Compsura heterura" about="#VTO_0038106">
+      <meta xsi:type="ResourceMeta" rel="dwc:taxonID" href="http://purl.obolibrary.org/obo/VTO_0038106" />
+    </otu>
+    <otu id="VTO_0038138" label="Prodontocharax melanotus" about="#VTO_0038138">
+      <meta xsi:type="ResourceMeta" rel="dwc:taxonID" href="http://purl.obolibrary.org/obo/VTO_0038138" />
+    </otu>
+    <otu id="VTO_0065893" label="Spintherobolus papilliferus" about="#VTO_0065893">
+      <meta xsi:type="ResourceMeta" rel="dwc:taxonID" href="http://purl.obolibrary.org/obo/VTO_0065893" />
+    </otu>
+    <otu id="VTO_0065636" label="Megacheirodon unicus" about="#VTO_0065636">
+      <meta xsi:type="ResourceMeta" rel="dwc:taxonID" href="http://purl.obolibrary.org/obo/VTO_0065636" />
+    </otu>
+    <otu id="VTO_0065788" label="Genus C species C (Malabarba 1998)" about="#VTO_0065788">
+      <meta xsi:type="ResourceMeta" rel="dwc:taxonID" href="http://purl.obolibrary.org/obo/VTO_0065788" />
+    </otu>
+    <otu id="VTO_0038109" label="Heterocheirodon" about="#VTO_0038109">
+      <meta xsi:type="ResourceMeta" rel="dwc:taxonID" href="http://purl.obolibrary.org/obo/VTO_0038109" />
+    </otu>
+    <otu id="VTO_0065571" label="Odontostilbe mitoptera" about="#VTO_0065571">
+      <meta xsi:type="ResourceMeta" rel="dwc:taxonID" href="http://purl.obolibrary.org/obo/VTO_0065571" />
+    </otu>
+    <otu id="VTO_0065877" label="Compsura gorgonae" about="#VTO_0065877">
+      <meta xsi:type="ResourceMeta" rel="dwc:taxonID" href="http://purl.obolibrary.org/obo/VTO_0065877" />
+    </otu>
+    <otu id="VTO_0038108" label="Kolpotocheirodon theloura" about="#VTO_0038108">
+      <meta xsi:type="ResourceMeta" rel="dwc:taxonID" href="http://purl.obolibrary.org/obo/VTO_0038108" />
+    </otu>
+    <otu id="VTO_0065585" label="Odontostilbe pequira" about="#VTO_0065585">
+      <meta xsi:type="ResourceMeta" rel="dwc:taxonID" href="http://purl.obolibrary.org/obo/VTO_0065585" />
+    </otu>
+    <otu id="VTO_0065747" label="Cheirodon pisciculus" about="#VTO_0065747">
+      <meta xsi:type="ResourceMeta" rel="dwc:taxonID" href="http://purl.obolibrary.org/obo/VTO_0065747" />
+    </otu>
+    <otu id="VTO_0038128" label="Odontostilbe fugitiva" about="#VTO_0038128">
+      <meta xsi:type="ResourceMeta" rel="dwc:taxonID" href="http://purl.obolibrary.org/obo/VTO_0038128" />
+    </otu>
+    <otu id="VTO_0065095" label="Cheirodontops geayi" about="#VTO_0065095">
+      <meta xsi:type="ResourceMeta" rel="dwc:taxonID" href="http://purl.obolibrary.org/obo/VTO_0065095" />
+    </otu>
+    <otu id="VTO_0038140" label="Nanocheirodon" about="#VTO_0038140">
+      <meta xsi:type="ResourceMeta" rel="dwc:taxonID" href="http://purl.obolibrary.org/obo/VTO_0038140" />
+    </otu>
+    <otu id="VTO_0038135" label="Pseudocheirodon arnoldi" about="#VTO_0038135">
+      <meta xsi:type="ResourceMeta" rel="dwc:taxonID" href="http://purl.obolibrary.org/obo/VTO_0038135" />
+    </otu>
+    <otu id="VTO_0038120" label="Aphyocheirodon hemigrammus" about="#VTO_0038120">
+      <meta xsi:type="ResourceMeta" rel="dwc:taxonID" href="http://purl.obolibrary.org/obo/VTO_0038120" />
+    </otu>
+    <otu id="VTO_0038111" label="Serrapinnus" about="#VTO_0038111">
+      <meta xsi:type="ResourceMeta" rel="dwc:taxonID" href="http://purl.obolibrary.org/obo/VTO_0038111" />
+    </otu>
+    <otu id="VTO_0038124" label="Saccoderma melanostigma" about="#VTO_0038124">
+      <meta xsi:type="ResourceMeta" rel="dwc:taxonID" href="http://purl.obolibrary.org/obo/VTO_0038124" />
+    </otu>
+  </otus>
+  <characters id="cc4104afe-da7a-43e7-a1c5-cb4a40fc9161" xsi:type="StandardCells" otus="tfc794139-a39f-4f2a-aa2e-b611ac9f9166">
+    <format>
+      <states id="sbc45bea3-9077-41d3-b9cf-31f8bc67a5da">
+        <state id="UBERON_2000251_1" label="present" symbol="1" />
+        <state id="UBERON_2000251_0" label="absent" symbol="0" />
+      </states>
+      <states id="sf18738e1-e041-46fa-9485-e9662544d980">
+        <state id="UBERON_2001920_0" label="absent" symbol="0" />
+        <state id="UBERON_2001920_1" label="present" symbol="1" />
+        <polymorphic_state_set id="s14fc0b8c-a7a7-45ee-982c-336a09ec4ffc" symbol="1 and 0">
+          <member state="UBERON_2001920_1" />
+          <member state="UBERON_2001920_0" />
+        </polymorphic_state_set>
+      </states>
+      <states id="sb9b11683-9fb8-408d-95b7-e887b5fad5c2">
+        <state id="UBERON_2001949_0" label="absent" symbol="0" />
+        <state id="UBERON_2001949_1" label="present" symbol="1" />
+      </states>
+      <states id="sf777ecad-84ce-45e5-b31c-47c9c01657d0">
+        <state id="UBERON_2002283_0" label="absent" symbol="0" />
+        <state id="UBERON_2002283_1" label="present" symbol="1" />
+        <polymorphic_state_set id="s71e2ada5-9c87-4680-afb8-2fb7ad9a17f1" symbol="0 and 1">
+          <member state="UBERON_2002283_0" />
+          <member state="UBERON_2002283_1" />
+        </polymorphic_state_set>
+      </states>
+      <char id="UBERON_2000251" label="adipose fin" about="#UBERON_2000251" states="sbc45bea3-9077-41d3-b9cf-31f8bc67a5da">
+        <meta xsi:type="ResourceMeta" rel="obo:IAO_0000219" href="http://purl.obolibrary.org/obo/UBERON_2000251" />
+      </char>
+      <char id="UBERON_2001920" label="pseudotympanum" about="#UBERON_2001920" states="sf18738e1-e041-46fa-9485-e9662544d980">
+        <meta xsi:type="ResourceMeta" rel="obo:IAO_0000219" href="http://purl.obolibrary.org/obo/UBERON_2001920" />
+      </char>
+      <char id="UBERON_2001949" label="caudal-fin hook" about="#UBERON_2001949" states="sb9b11683-9fb8-408d-95b7-e887b5fad5c2">
+        <meta xsi:type="ResourceMeta" rel="obo:IAO_0000219" href="http://purl.obolibrary.org/obo/UBERON_2001949" />
+      </char>
+      <char id="UBERON_2002283" label="melanophore spot" about="#UBERON_2002283" states="sf777ecad-84ce-45e5-b31c-47c9c01657d0">
+        <meta xsi:type="ResourceMeta" rel="obo:IAO_0000219" href="http://purl.obolibrary.org/obo/UBERON_2002283" />
+      </char>
+    </format>
+    <matrix>
+      <row id="r57d9b9d3-75bc-498e-a165-60330c7ecabd" otu="VTO_0065575">
+        <cell char="UBERON_2000251" state="UBERON_2000251_1" />
+        <cell char="UBERON_2001920" state="s14fc0b8c-a7a7-45ee-982c-336a09ec4ffc" />
+        <cell char="UBERON_2001949" state="UBERON_2001949_1" />
+        <cell char="UBERON_2002283" state="UBERON_2002283_0" />
+      </row>
+      <row id="rb79f75b6-5459-450a-bb0b-e6749ff1211d" otu="VTO_0038118">
+        <cell char="UBERON_2000251" state="UBERON_2000251_1" />
+        <cell char="UBERON_2001920" state="s14fc0b8c-a7a7-45ee-982c-336a09ec4ffc" />
+        <cell char="UBERON_2001949" state="UBERON_2001949_1" />
+        <cell char="UBERON_2002283" state="s71e2ada5-9c87-4680-afb8-2fb7ad9a17f1" />
+      </row>
+      <row id="rb1059c02-5026-46bd-b6d8-36ae04a92a6b" otu="VTO_0038133">
+        <cell char="UBERON_2000251" state="UBERON_2000251_1" />
+        <cell char="UBERON_2001920" state="s14fc0b8c-a7a7-45ee-982c-336a09ec4ffc" />
+        <cell char="UBERON_2001949" state="UBERON_2001949_1" />
+        <cell char="UBERON_2002283" state="s71e2ada5-9c87-4680-afb8-2fb7ad9a17f1" />
+      </row>
+      <row id="r20ff136b-46e1-4a67-8352-1eac122c7ef9" otu="VTO_0038106">
+        <cell char="UBERON_2000251" state="UBERON_2000251_1" />
+        <cell char="UBERON_2001920" state="s14fc0b8c-a7a7-45ee-982c-336a09ec4ffc" />
+        <cell char="UBERON_2001949" state="UBERON_2001949_0" />
+        <cell char="UBERON_2002283" state="s71e2ada5-9c87-4680-afb8-2fb7ad9a17f1" />
+      </row>
+      <row id="r1008ca10-7000-4006-b80b-c193d219ec04" otu="VTO_0038138">
+        <cell char="UBERON_2000251" state="UBERON_2000251_1" />
+        <cell char="UBERON_2001920" state="s14fc0b8c-a7a7-45ee-982c-336a09ec4ffc" />
+        <cell char="UBERON_2001949" state="UBERON_2001949_0" />
+        <cell char="UBERON_2002283" state="s71e2ada5-9c87-4680-afb8-2fb7ad9a17f1" />
+      </row>
+      <row id="r2a5682ff-6690-4262-9203-50a4514a9ce2" otu="VTO_0065893">
+        <cell char="UBERON_2000251" state="UBERON_2000251_0" />
+        <cell char="UBERON_2001920" state="UBERON_2001920_1" />
+        <cell char="UBERON_2001949" state="UBERON_2001949_0" />
+        <cell char="UBERON_2002283" state="UBERON_2002283_0" />
+      </row>
+      <row id="r22a66864-9dd5-4248-8d94-45562a20ae78" otu="VTO_0065636">
+        <cell char="UBERON_2001949" state="UBERON_2001949_0" />
+      </row>
+      <row id="r09208a2b-04e9-4290-b664-bfb5e79c04cb" otu="VTO_0065788">
+        <cell char="UBERON_2000251" state="UBERON_2000251_1" />
+        <cell char="UBERON_2001920" state="s14fc0b8c-a7a7-45ee-982c-336a09ec4ffc" />
+        <cell char="UBERON_2001949" state="UBERON_2001949_0" />
+        <cell char="UBERON_2002283" state="UBERON_2002283_0" />
+      </row>
+      <row id="r91fd3f67-2afe-4da0-bf37-f2079810f80f" otu="VTO_0038109">
+        <cell char="UBERON_2000251" state="UBERON_2000251_1" />
+        <cell char="UBERON_2001920" state="s14fc0b8c-a7a7-45ee-982c-336a09ec4ffc" />
+        <cell char="UBERON_2001949" state="UBERON_2001949_0" />
+        <cell char="UBERON_2002283" state="UBERON_2002283_0" />
+      </row>
+      <row id="r8788dbc9-491c-4b21-99e2-d6c615b7439c" otu="VTO_0065571">
+        <cell char="UBERON_2000251" state="UBERON_2000251_1" />
+        <cell char="UBERON_2001920" state="s14fc0b8c-a7a7-45ee-982c-336a09ec4ffc" />
+        <cell char="UBERON_2001949" state="UBERON_2001949_0" />
+        <cell char="UBERON_2002283" state="UBERON_2002283_0" />
+      </row>
+      <row id="r2e64387b-7058-4a98-a8a9-b632c221c52c" otu="VTO_0065877">
+        <cell char="UBERON_2000251" state="UBERON_2000251_1" />
+        <cell char="UBERON_2001920" state="s14fc0b8c-a7a7-45ee-982c-336a09ec4ffc" />
+        <cell char="UBERON_2001949" state="UBERON_2001949_0" />
+        <cell char="UBERON_2002283" state="UBERON_2002283_0" />
+      </row>
+      <row id="rd28f2708-563d-4d31-a42b-a8cea80d9a89" otu="VTO_0038108">
+        <cell char="UBERON_2000251" state="UBERON_2000251_1" />
+        <cell char="UBERON_2001920" state="s14fc0b8c-a7a7-45ee-982c-336a09ec4ffc" />
+        <cell char="UBERON_2001949" state="UBERON_2001949_1" />
+        <cell char="UBERON_2002283" state="UBERON_2002283_0" />
+      </row>
+      <row id="r162274c8-d9bc-4cd2-b913-41a02b3ea80d" otu="VTO_0065585">
+        <cell char="UBERON_2000251" state="UBERON_2000251_1" />
+        <cell char="UBERON_2001920" state="s14fc0b8c-a7a7-45ee-982c-336a09ec4ffc" />
+        <cell char="UBERON_2001949" state="UBERON_2001949_0" />
+        <cell char="UBERON_2002283" state="UBERON_2002283_0" />
+      </row>
+      <row id="r7822a676-eac3-4e6c-8fb8-e54fb48b41f0" otu="VTO_0065747">
+        <cell char="UBERON_2000251" state="UBERON_2000251_1" />
+        <cell char="UBERON_2001920" state="s14fc0b8c-a7a7-45ee-982c-336a09ec4ffc" />
+        <cell char="UBERON_2001949" state="UBERON_2001949_0" />
+        <cell char="UBERON_2002283" state="UBERON_2002283_0" />
+      </row>
+      <row id="r803f5207-4594-4665-8078-7f34a07326a2" otu="VTO_0038128">
+        <cell char="UBERON_2000251" state="UBERON_2000251_1" />
+        <cell char="UBERON_2001920" state="s14fc0b8c-a7a7-45ee-982c-336a09ec4ffc" />
+        <cell char="UBERON_2001949" state="UBERON_2001949_0" />
+        <cell char="UBERON_2002283" state="UBERON_2002283_0" />
+      </row>
+      <row id="rbcb00247-2d21-4bdb-947c-b74156658e2d" otu="VTO_0065095">
+        <cell char="UBERON_2000251" state="UBERON_2000251_1" />
+        <cell char="UBERON_2001920" state="s14fc0b8c-a7a7-45ee-982c-336a09ec4ffc" />
+        <cell char="UBERON_2001949" state="UBERON_2001949_0" />
+        <cell char="UBERON_2002283" state="UBERON_2002283_0" />
+      </row>
+      <row id="rb3d3adb5-8680-46aa-ace8-c718e61b2c6f" otu="VTO_0038140">
+        <cell char="UBERON_2000251" state="UBERON_2000251_1" />
+        <cell char="UBERON_2001920" state="s14fc0b8c-a7a7-45ee-982c-336a09ec4ffc" />
+        <cell char="UBERON_2001949" state="UBERON_2001949_0" />
+        <cell char="UBERON_2002283" state="UBERON_2002283_0" />
+      </row>
+      <row id="r8499bfc2-3fe2-4b3d-9a9e-35d886afaec8" otu="VTO_0038135">
+        <cell char="UBERON_2000251" state="UBERON_2000251_1" />
+        <cell char="UBERON_2001920" state="s14fc0b8c-a7a7-45ee-982c-336a09ec4ffc" />
+        <cell char="UBERON_2001949" state="UBERON_2001949_0" />
+        <cell char="UBERON_2002283" state="UBERON_2002283_0" />
+      </row>
+      <row id="rd48c8c1b-a613-4d19-951b-d868cf99f5ce" otu="VTO_0038120">
+        <cell char="UBERON_2000251" state="UBERON_2000251_1" />
+        <cell char="UBERON_2001920" state="s14fc0b8c-a7a7-45ee-982c-336a09ec4ffc" />
+        <cell char="UBERON_2001949" state="UBERON_2001949_0" />
+        <cell char="UBERON_2002283" state="UBERON_2002283_0" />
+      </row>
+      <row id="r9a78cb4c-7d2f-44b5-942b-1d9a73180c36" otu="VTO_0038111">
+        <cell char="UBERON_2000251" state="UBERON_2000251_1" />
+        <cell char="UBERON_2001920" state="s14fc0b8c-a7a7-45ee-982c-336a09ec4ffc" />
+        <cell char="UBERON_2001949" state="UBERON_2001949_0" />
+        <cell char="UBERON_2002283" state="UBERON_2002283_0" />
+      </row>
+      <row id="r9e1f2794-ecb0-4910-a897-219259e183f3" otu="VTO_0038124">
+        <cell char="UBERON_2000251" state="UBERON_2000251_1" />
+        <cell char="UBERON_2001920" state="s14fc0b8c-a7a7-45ee-982c-336a09ec4ffc" />
+        <cell char="UBERON_2001949" state="UBERON_2001949_1" />
+        <cell char="UBERON_2002283" state="UBERON_2002283_0" />
+      </row>
+    </matrix>
+  </characters>
+  <trees id="t3fc2cdcd-726b-416f-bcf8-ac375a41e447" otus="tfc794139-a39f-4f2a-aa2e-b611ac9f9166" />
+</nexml>
