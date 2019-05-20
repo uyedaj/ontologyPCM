@@ -143,10 +143,13 @@ makeTree <- function (td)
 
 # this function plots the data from the matrix as well as the tree we made in the previous function and outputs an image with the two trees 
 #and a heatmap of the data 
-plotData <- function(td, njt, margs=c(0.2, 0.25))
+plotData <- function(td, njt, margs=c(0.2, 0.25), ...)
 {
-  X <- do.call(cbind, lapply(3:ncol(td$dat), function(x) as.numeric(td$dat[[x]])))
+  vals <- na.omit(unique(do.call(c, lapply(3:ncol(td$dat), function(x) unique(as.character(td$dat[[x]]))))))
+  X <- do.call(cbind, lapply(3:ncol(td$dat), function(x) as.numeric(recode(td$dat[[x]], "0 and 1"=0.5, "1 and 0"=0.5, "1"=1, "0"=0, "2"=2, "3"=3))))
   colnames(X) <- colnames(td$dat)[3:ncol(td$dat)]
+  X <- X[,njt$edge[njt$edge[,2] <= length(njt$tip.label),2]]
+  .vals <- sort(na.omit(unique(as.vector(X))))
   dimx <- dim(X)
   
   tree <- njt
@@ -158,22 +161,24 @@ plotData <- function(td, njt, margs=c(0.2, 0.25))
   tree2$edge.length <- tree2$edge.length/(max(branching.times(tree2)))*margs[2]*dimx[1]
   
   #Changes the direction of the top plot
-  h1 <- plot(tree1, plot = FALSE, show.tip.label=FALSE)
+  h1 <- plot(tree1, plot = FALSE, cex=0.5)
   h2 <- plot(tree2, plot = FALSE, direction = "downwards", show.tip.label=FALSE)
   
   # this is all setting boundaries for the different plots and combining them into one image
   par(mar = c(0,0,0,0))
   plot(0,0, type = 'n', xlim = c(0,h1$x.lim[2]+h2$x.lim[2]), ylim=c(0,h1$y.lim[2]+h2$y.lim[2]))
   
-  image(seq(h1$x.lim[2]+1,h1$x.lim[2]+h2$x.lim[2], length.out=ncol(X)), seq(0, h1$y.lim[2], length.out=nrow(X)), t(X),xlim=c(1+h1$x.lim[2],h1$x.lim[2]+h2$x.lim[2]+1) ,ylim=c(0, h1$y.lim[2]-1), add=TRUE)
+  image(seq(h1$x.lim[2]+1,h1$x.lim[2]+h2$x.lim[2], length.out=ncol(X)), seq(1, h1$y.lim[2], length.out=nrow(X)), t(X),xlim=c(1+h1$x.lim[2],h1$x.lim[2]+h2$x.lim[2]+1) ,ylim=c(0, h1$y.lim[2]-1), add=TRUE, cols=hcl.colors(length(.vals), "YlOrRd", rev = TRUE))
+  
+  legend(0, (h1$y.lim[2]+h2$y.lim[2])*.99, legend=.vals ,pch=22, pt.bg=hcl.colors(length(.vals), "YlOrRd", rev = TRUE))
   
   par(new = TRUE)
   
   
-  plot(tree1, x.lim=c(0,(1+margs[2])*(h2$x.lim[2]+h1$x.lim[1])), y.lim=c(0,h1$y.lim[2]+h2$y.lim[2]), show.tip.label=FALSE)
+  plot(tree1, x.lim=c(0,(1+margs[2])*(h2$x.lim[2]+h1$x.lim[1])), y.lim=c(0,h1$y.lim[2]+h2$y.lim[2]), ...)
   
   par(new = TRUE)
-  plot(tree2, direction = "downwards", x.lim=c(-h1$x.lim[2],h2$x.lim[2]), y.lim=c((-h1$y.lim[2])-0.01*dimx[1],h2$y.lim[2]), show.tip.label=FALSE)
+  plot(tree2, direction = "downwards", x.lim=c(-h1$x.lim[2],h2$x.lim[2]), y.lim=c((-h1$y.lim[2])-0.01*dimx[1],h2$y.lim[2]), ...)
   
   return ()
   
