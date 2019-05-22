@@ -20,9 +20,9 @@ Get_Tree_Data <- function (taxonName, entityName)
   
   m <- pk_get_ontotrace(nex)
   m$taxa <- gsub(" ", "_", m$taxa)
-  write.csv(m, file="~/repos/ontologyPCM/data/Ontotrace_Siluriformes_AnatomicalEntity.csv")
+  # write.csv(m, file="~/ontologyPCM/data/Ontotrace_Siluriformes_AnatomicalEntity.csv")
   
-  tree <- read.tree("~/repos/ontologyPCM/data/actinopt_12k_treePL.tre")
+  tree <- read.tree("../data/actinopt_12k_treePL.tre")
   td <- make.treedata(tree, m)
   
   #saveRDS(td, "~/repos/ontologyPCM/data/tdSiluriformesAnatomicalEntity.rds")
@@ -181,7 +181,14 @@ plotData <- function(td, njt, margs=c(0.2, 0.25), ...)
   plot(tree2, direction = "downwards", x.lim=c(-h1$x.lim[2],h2$x.lim[2]), y.lim=c((-h1$y.lim[2])-0.01*dimx[1],h2$y.lim[2]), ...)
   
   return ()
-  
+}
+
+filter_coverage <- function(td, traits=0, taxa=0){
+  taxa_coverage <- apply(td$dat, 1, function(x) mean(as.numeric(!is.na(x))))
+  trait_coverage <- apply(td$dat, 2, function(x) mean(as.numeric(!is.na(x))))
+  td <- filter(td, taxa_coverage > taxa)
+  td <- select(td, which(trait_coverage > traits))
+  return(td)
 }
 
 
