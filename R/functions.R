@@ -27,13 +27,10 @@ Get_Tree_Data <- function (taxonName, entityName)
   
   #saveRDS(td, "~/repos/ontologyPCM/data/tdSiluriformesAnatomicalEntity.rds")
   
-  
-  
   #td <- readRDS("~/repos/ontologyPCM/data/tdSiluriformesAnatomicalEntity.rds")
   #td
   
   return (td) 
-  
 }
 
 
@@ -43,29 +40,17 @@ Get_Tree_Data <- function (taxonName, entityName)
 # this function takes in our matrix td from the previous function and makes a tree out the matrix data
 makeTree <- function (td)
 {
-  
-  
   traits <- colnames(td$dat)
   traits <- traits[-(1:2)] #delete otu data
   traits
-  
-  
-  
+
   #Get IRI ids for each trait.
-  
-  
   traitDetails <- lapply(traits, function(x) pk_anatomical_detail(x, verbose=TRUE))
-  
-  
   
   traitDetails[1:5]
   traitIDs <- unname(do.call(c, sapply(traitDetails, function(x) x[,'@id'])))
   
-  
-  
   irisPhenotypes <- sapply(traitIDs, url_encode)
-  
-  
   
   filename <- "a.txt"
   
@@ -76,17 +61,9 @@ makeTree <- function (td)
   dum <- lapply(irisPhenotypes[1:(length(irisPhenotypes)-1)],function(x) cat(paste0('%22', x,'%22%2C', sep=""), file=filename, append=TRUE))
   cat(paste0('%22', irisPhenotypes[[length(irisPhenotypes)]],'%22',"%5D%0A", sep=""), file=filename, append=TRUE)
   
-  
-  
-  
-  
   api.semanticSimilarity_query <- "curl -X POST -d @a.txt 'https://kb.phenoscape.org/api/similarity/jaccard'"
   semanticSimilarityAPIResults <- system(api.semanticSimilarity_query, intern=TRUE)
-  
-  
-  
-  
-  
+
   results <- fromJSON(semanticSimilarityAPIResults)
   scores <- lapply(results$results, function(x) x$score)
   scores <- sapply(scores, function(x) if(is.null(x)) NA else(x))
@@ -103,11 +80,7 @@ makeTree <- function (td)
   
   write.csv(semanticSimilarityMatrix, file="siluriformesSemanticSimMatrix.csv")
   
-  
-  
   #Check to see if semantic similarity matrix makes sense.
-  
-  
   maxSS <- list()
   for(i in 1:ncol(semanticSimilarityMatrix)){
     ss <- semanticSimilarityMatrix[-i,]
@@ -116,7 +89,6 @@ makeTree <- function (td)
   }
   maxSS <- do.call(rbind, maxSS)
   as.data.frame(maxSS)
-  
   
   minSS <- list()
   for(i in 1:ncol(semanticSimilarityMatrix)){
@@ -127,10 +99,7 @@ makeTree <- function (td)
   minSS <- do.call(rbind, minSS)
   as.data.frame(minSS)
   
-  
-  
   #Neighbor-joining tree of SS matrix
-  
   njt <- nj(1-semanticSimilarityMatrix)
   pdf("njTreeSiluriformesSemanticMatrix.pdf", height=30, width=30)
   plot(njt, type="unrooted", cex=0.35)
@@ -174,7 +143,6 @@ plotData <- function(td, njt, margs=c(0.2, 0.25), ...)
   
   par(new = TRUE)
   
-  
   plot(tree1, x.lim=c(0,(1+margs[2])*(h2$x.lim[2]+h1$x.lim[1])), y.lim=c(0,h1$y.lim[2]+h2$y.lim[2]), ...)
   
   par(new = TRUE)
@@ -184,11 +152,28 @@ plotData <- function(td, njt, margs=c(0.2, 0.25), ...)
 }
 
 filter_coverage <- function(td, traits=0, taxa=0){
-  taxa_coverage <- apply(td$dat, 1, function(x) mean(as.numeric(!is.na(x))))
-  trait_coverage <- apply(td$dat, 2, function(x) mean(as.numeric(!is.na(x))))
-  td <- filter(td, taxa_coverage > taxa)
-  td <- select(td, which(trait_coverage > traits))
-  return(td)
+  tryCatch({
+    taxa_coverage <- apply(td$dat, 1, function(x) mean(as.numeric(!is.na(x))))
+    trait_coverage <- apply(td$dat, 2, function(x) mean(as.numeric(!is.na(x))))
+    td <- filter(td, taxa_coverage >= taxa)
+    
+    # issue a warning if filter arguments empty the tree
+    if (max(taxa_coverage) > taxa){
+      warning(taxa)
+    }
+    if (max(trait_coverage) > traits){
+      warning(traits)
+    }
+    
+    td <- select(td, which(trait_coverage >= traits))
+    return(td)
+  },
+  warning = function(w) {
+    print(paste("Taxa or trait coverage is too high"))
+    return(td)
+    }
+ )
+
 }
 
 

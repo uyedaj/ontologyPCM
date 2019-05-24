@@ -53,8 +53,8 @@ ui <- fluidPage(
 server <- function(input, output) {
   # confirm input values
   confirm_t <- eventReactive(input$plot, {
-    paste("Fetching plot for ", input$taxon, "and ", input$trait, "\n;", 
-          input$f_traits, " traits filtered and ", input$f_taxa, " taxa filtered")
+    paste("Fetching plot for ", input$taxon, "and ", input$trait, "; ", 
+          input$f_traits, " trait filter coverage and ", input$f_taxa, " taxa filter coverage")
   })
   
   output$confirm <- renderText({
@@ -73,9 +73,8 @@ server <- function(input, output) {
   # fetch plot based on user input
   fplot <- eventReactive(input$plot, {
      td <- Get_Tree_Data(input$taxon, input$trait)
-     td <- filter_coverage(td, input$f_traits, input$f_taxa)
+     td <- filter_coverage(td, traits=input$f_traits, taxa=input$f_taxa)
      njt <- makeTree(td)
-     paste("# taxa and # traits returned")
      plotData(td, njt, show.tip.label=TRUE, cex=0.25)
   })
   
