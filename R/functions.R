@@ -33,10 +33,6 @@ Get_Tree_Data <- function (taxonName, entityName)
   return (td) 
 }
 
-
-
-
-
 # this function takes in our matrix td from the previous function and makes a tree out the matrix data
 makeTree <- function (td)
 {
@@ -72,9 +68,19 @@ makeTree <- function (td)
   diag(semanticSimilarityMatrix) <- 1
   rownames(semanticSimilarityMatrix) <- colnames(semanticSimilarityMatrix) <- curlUnescape(irisPhenotypes)
   
-  for(i in 1:nrow(result_terms)){
-    semanticSimilarityMatrix[result_terms[i,1], result_terms[i,2]] <- semanticSimilarityMatrix[result_terms[i,2], result_terms[i,1]] <- scores[i]
+  #### if result_terms < 1 don't run this loop 
+  #### use stop() to print error message
+  if(!is.null(result_terms)){
+    if (nrow(result_terms) > 1){
+      for(i in 1:nrow(result_terms)){
+        semanticSimilarityMatrix[result_terms[i,1], result_terms[i,2]] <- semanticSimilarityMatrix[result_terms[i,2], result_terms[i,1]] <- scores[i]
+      }
+    }
+    else{
+      stop("result_terms is too small")
+    }
   }
+  
   
   rownames(semanticSimilarityMatrix) <- colnames(semanticSimilarityMatrix) <- traits
   
@@ -112,30 +118,37 @@ makeTree <- function (td)
 
 # this function plots the data from the matrix as well as the tree we made in the previous function and outputs an image with the two trees 
 #and a heatmap of the data 
-plotData <- function(td, njt, margs=c(0.2, 0.25), ...)
+plotData <- function(td, njt=NULL, start=1, margs=c(0.2, 0.25), ...)
 {
-  vals <- na.omit(unique(do.call(c, lapply(3:ncol(td$dat), function(x) unique(as.character(td$dat[[x]]))))))
-  X <- do.call(cbind, lapply(3:ncol(td$dat), function(x) as.numeric(recode(td$dat[[x]], "0 and 1"=0.5, "1 and 0"=0.5, "1"=1, "0"=0, "2"=2, "3"=3))))
-  colnames(X) <- colnames(td$dat)[3:ncol(td$dat)]
-  X <- X[,njt$edge[njt$edge[,2] <= length(njt$tip.label),2]]
+  #vals <- na.omit(unique(do.call(c, lapply(3:ncol(td$dat), function(x) unique(as.character(td$dat[[x]]))))))
+  
+  X <- do.call(cbind, lapply(start:ncol(td$dat), function(x) as.numeric(recode(td$dat[[x]], "0 and 1"=0.5, "1 and 0"=0.5, "1"=1, "0"=0, "2"=2, "3"=3))))
+  colnames(X) <- colnames(td$dat)[start:ncol(td$dat)]
+  
   .vals <- sort(na.omit(unique(as.vector(X))))
   dimx <- dim(X)
   
-  tree <- njt
   tree1 <- chronopl(td$phy,1)
-  tree2 <- chronopl(njt, 1)
+  
+  if(!is.null(njt)){
+    X <- X[,njt$edge[njt$edge[,2] <= length(njt$tip.label),2]]
+    tree2 <- chronopl(njt, 1)
+    tree2$edge.length <- tree2$edge.length/(max(branching.times(tree2)))*margs[2]*dimx[1]
+    h2 <- plot(tree2, plot = FALSE, direction = "downwards", show.tip.label=FALSE)
+  } else{
+    h2 <- list(x.lim=c(1,dimx[2]+1), y.lim=c(0,0.2*dimx[1]))
+  }
   
   #alters the length of the tips of the trees
   tree1$edge.length <- tree1$edge.length/(max(branching.times(tree1)))*margs[1]*dimx[2]
-  tree2$edge.length <- tree2$edge.length/(max(branching.times(tree2)))*margs[2]*dimx[1]
   
   #Changes the direction of the top plot
   h1 <- plot(tree1, plot = FALSE, cex=0.5)
-  h2 <- plot(tree2, plot = FALSE, direction = "downwards", show.tip.label=FALSE)
+  
   
   # this is all setting boundaries for the different plots and combining them into one image
   par(mar = c(0,0,0,0))
-  plot(0,0, type = 'n', xlim = c(0,h1$x.lim[2]+h2$x.lim[2]), ylim=c(0,h1$y.lim[2]+h2$y.lim[2]))
+  plot(0,0, type = 'n', xlim = c(0,h1$x.lim[2]+h2$x.lim[2]), ylim=c(0,h1$y.lim[2]+h2$y.lim[2]),...)
   
   image(seq(h1$x.lim[2]+1,h1$x.lim[2]+h2$x.lim[2], length.out=ncol(X)), seq(1, h1$y.lim[2], length.out=nrow(X)), t(X),xlim=c(1+h1$x.lim[2],h1$x.lim[2]+h2$x.lim[2]+1) ,ylim=c(0, h1$y.lim[2]-1), add=TRUE, cols=hcl.colors(length(.vals), "YlOrRd", rev = TRUE))
   
@@ -143,33 +156,39 @@ plotData <- function(td, njt, margs=c(0.2, 0.25), ...)
   
   par(new = TRUE)
   
-  plot(tree1, x.lim=c(0,(1+margs[2])*(h2$x.lim[2]+h1$x.lim[1])), y.lim=c(0,h1$y.lim[2]+h2$y.lim[2]), ...)
+  plot(tree1, x.lim=c(0,(1+margs[2])*(h2$x.lim[2]+h1$x.lim[1])), y.lim=c(0,h1$y.lim[2]+h2$y.lim[2]),...)
   
-  par(new = TRUE)
-  plot(tree2, direction = "downwards", x.lim=c(-h1$x.lim[2],h2$x.lim[2]), y.lim=c((-h1$y.lim[2])-0.01*dimx[1],h2$y.lim[2]), ...)
+  if(!is.null(njt)){
+    par(new = TRUE)
+    plot(tree2, direction = "downwards", x.lim=c(-h1$x.lim[2],h2$x.lim[2]), y.lim=c((-h1$y.lim[2])-0.01*dimx[1],h2$y.lim[2]))
+  }
   
   return ()
 }
 
 filter_coverage <- function(td, traits=0, taxa=0){
   tryCatch({
-    taxa_coverage <- apply(td$dat, 1, function(x) mean(as.numeric(!is.na(x))))
-    trait_coverage <- apply(td$dat, 2, function(x) mean(as.numeric(!is.na(x))))
-    td <- filter(td, taxa_coverage >= taxa)
-    
-    # issue a warning if filter arguments empty the tree
-    if (max(taxa_coverage) > taxa){
-      warning(taxa)
-    }
-    if (max(trait_coverage) > traits){
-      warning(traits)
-    }
-    
-    td <- select(td, which(trait_coverage >= traits))
-    return(td)
+      td$dat <- select_at(td$dat, vars(-starts_with("otu")))
+      taxa_coverage <- apply(td$dat, 1, function(x) mean(as.numeric(!is.na(x))))
+      trait_coverage <- apply(td$dat, 2, function(x) mean(as.numeric(!is.na(x))))
+      
+      # issue a warning if filter arguments empty the tree
+      if (max(taxa_coverage) < taxa){
+        warning(taxa)
+      }
+      if (max(trait_coverage) < traits){
+        warning(traits)
+      }
+      
+      # filter if no warnings 
+      td <- filter(td, taxa_coverage >= taxa)
+      td <- select(td, which(trait_coverage >= traits))
+      
+      return(td)
   },
   warning = function(w) {
-    print(paste("Taxa or trait coverage is too high"))
+    ## print error message 
+    stop("Taxa or trait coverage is too high")
     return(td)
     }
  )
