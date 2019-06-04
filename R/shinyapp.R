@@ -1,5 +1,5 @@
 #
-#
+# This app returns a plot, based on user input, of traits vs taxa data from the phenoscape database
 
 library(shiny)
 library(rphenoscape)
@@ -20,7 +20,7 @@ source("functions.R")
 
 # Define UI ----
 ui <- fluidPage(
-  titlePanel("title"),
+  titlePanel("Ontology trait explorer"),
   
   sidebarLayout(
     sidebarPanel(
@@ -53,8 +53,7 @@ ui <- fluidPage(
 server <- function(input, output) {
   # confirm input values
   confirm_t <- eventReactive(input$plot, {
-    paste("Fetching plot for ", input$taxon, "and ", input$trait, "; ", 
-          input$f_traits, " trait filter coverage and ", input$f_taxa, " taxa filter coverage")
+    paste("Fetching plot for ", input$taxon, "and ", input$trait)
   })
   
   output$confirm <- renderText({
@@ -63,7 +62,7 @@ server <- function(input, output) {
   
   # confirm # of results 
   confirm_r <- eventReactive(input$plot, {
-    paste("# taxa and # traits returned")
+    paste(length(td$phy), " taxa and ", length(td$dat), " traits returned")
   })
   
   output$results <- renderText({
@@ -72,10 +71,17 @@ server <- function(input, output) {
   
   # fetch plot based on user input
   fplot <- eventReactive(input$plot, {
-     td <- Get_Tree_Data(input$taxon, input$trait)
-     td <- filter_coverage(td, traits=input$f_traits, taxa=input$f_taxa)
-     njt <- makeTree(td)
-     plotData(td, njt, show.tip.label=TRUE, cex=0.25)
+    td <- Get_Tree_Data(input$taxon, input$trait)
+    td <- filter_coverage(td, traits=input$f_traits, taxa=input$f_taxa)
+    
+    # issues a warning if we can't make a tree with the given # of traits and taxa
+    if ((ncol(td$dat) <= 2) || length(td$phy$tip.label) <= 2){
+      stop("Not enough traits or taxa to make tree")
+    }
+    
+      njt <- makeTree(td)
+      plotData(td, njt, show.tip.label=TRUE, cex=0.25)
+    
   })
   
   output$graph <- renderPlot({

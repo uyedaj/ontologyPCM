@@ -148,7 +148,7 @@ plotData <- function(td, njt=NULL, start=1, margs=c(0.2, 0.25), ...)
   
   # this is all setting boundaries for the different plots and combining them into one image
   par(mar = c(0,0,0,0))
-  plot(0,0, type = 'n', xlim = c(0,h1$x.lim[2]+h2$x.lim[2]), ylim=c(0,h1$y.lim[2]+h2$y.lim[2]),...)
+  plot(0,0, type = 'n', xlim = c(0,h1$x.lim[2]+h2$x.lim[2]), ylim=c(0,h1$y.lim[2]+h2$y.lim[2]))
   
   image(seq(h1$x.lim[2]+1,h1$x.lim[2]+h2$x.lim[2], length.out=ncol(X)), seq(1, h1$y.lim[2], length.out=nrow(X)), t(X),xlim=c(1+h1$x.lim[2],h1$x.lim[2]+h2$x.lim[2]+1) ,ylim=c(0, h1$y.lim[2]-1), add=TRUE, cols=hcl.colors(length(.vals), "YlOrRd", rev = TRUE))
   

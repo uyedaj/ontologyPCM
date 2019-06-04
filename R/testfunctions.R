@@ -29,7 +29,9 @@ td <- filter_coverage(td, traits=0.7, taxa=0)
 # make tree if traits & taxa are both > 1
 if ((length(td$dat) > 1) && length(td$phy) > 1){
   njt <- makeTree(td)
+} else {
+  stop("Not enough traits or taxa to make tree")
 }
 pdf(paste("~/ontologyPCM/", taxon, "_", trait, ".pdf"), width=10, height=8)
-plotData(td, njt=NULL, show.tip.label=TRUE, cex=0.25)
+plotData(td, njt, show.tip.label=TRUE, cex=0.25)
 dev.off()
