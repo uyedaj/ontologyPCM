@@ -15,6 +15,8 @@ library(phytools)
 library(phylogram)
 library(geiger)
 
+options(shiny.sanitize.errors = FALSE)
+
 # import functions 
 source("functions.R")
 
@@ -62,7 +64,7 @@ server <- function(input, output) {
   
   # confirm # of results 
   confirm_r <- eventReactive(input$plot, {
-    paste(length(td$phy), " taxa and ", length(td$dat), " traits returned")
+    # paste(length(td$phy), " taxa and ", length(td$dat), " traits returned")
   })
   
   output$results <- renderText({
@@ -76,10 +78,12 @@ server <- function(input, output) {
     
     # issues a warning if we can't make a tree with the given # of traits and taxa
     if ((ncol(td$dat) <= 2) || length(td$phy$tip.label) <= 2){
+      print("Not enough traits or taxa to make tree")
       stop("Not enough traits or taxa to make tree")
     }
     
       njt <- makeTree(td)
+      
       plotData(td, njt, show.tip.label=TRUE, cex=0.25)
     
   })

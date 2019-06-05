@@ -22,7 +22,7 @@ Get_Tree_Data <- function (taxonName, entityName)
   m$taxa <- gsub(" ", "_", m$taxa)
   # write.csv(m, file="~/ontologyPCM/data/Ontotrace_Siluriformes_AnatomicalEntity.csv")
   
-  tree <- read.tree("../data/actinopt_12k_treePL.tre")
+  tree <- read.tree("actinopt_12k_treePL.tre")
   td <- make.treedata(tree, m)
   
   #saveRDS(td, "~/repos/ontologyPCM/data/tdSiluriformesAnatomicalEntity.rds")
@@ -188,6 +188,7 @@ filter_coverage <- function(td, traits=0, taxa=0){
   },
   warning = function(w) {
     ## print error message 
+    print("Taxa or trait coverage is too high")
     stop("Taxa or trait coverage is too high")
     return(td)
     }
