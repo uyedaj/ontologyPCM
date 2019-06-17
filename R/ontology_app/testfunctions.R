@@ -32,6 +32,6 @@ if ((length(td$dat) > 1) && length(td$phy) > 1){
 } else {
   stop("Not enough traits or taxa to make tree")
 }
-pdf(paste("~/ontologyPCM/", taxon, "_", trait, ".pdf"), width=10, height=8)
+pdf(paste("~/ontologyPCM/R/ontology_app/", taxon, "_", trait, ".pdf"), width=10, height=8)
 plotData(td, njt, show.tip.label=TRUE, cex=0.25)
 dev.off()

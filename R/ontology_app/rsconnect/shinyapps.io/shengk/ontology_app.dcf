@@ -5,6 +5,6 @@ account: shengk
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 965504
-bundleId: 2133586
+bundleId: 2159713
 url: https://shengk.shinyapps.io/ontology_app/
-when: 1559762370.47487
+when: 1560802479.81702
