@@ -2,7 +2,7 @@
 source("functions.R")
 
 # use functions to generate the plot
-setwd("~/ontologyPCM/R")
+setwd("~/ontologyPCM/R/ontology_app")
 
 taxon <- "Characiformes"
 trait <- "dermal bone"

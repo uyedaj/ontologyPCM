@@ -39,47 +39,20 @@ makeTree <- function (td)
   traits <- colnames(td$dat)
   traits <- traits[-(1:2)] #delete otu data
   traits
+  
+  semanticSimilarityMatrix <- jaccard_similarity(terms = traits, .colnames = "label", .labels = traits)
 
-  #Get IRI ids for each trait.
-  traitDetails <- lapply(traits, function(x) pk_anatomical_detail(x, verbose=TRUE))
-  
-  traitDetails[1:5]
-  traitIDs <- unname(do.call(c, sapply(traitDetails, function(x) x[,'@id'])))
-  
-  irisPhenotypes <- sapply(traitIDs, url_encode)
-  
-  filename <- "a.txt"
-  
-  cat("iris=%5B%0A%20%20", file=filename)
-  irisPhenotypes <- lapply(irisPhenotypes, function(x) gsub("/", "%2F", x, fixed=TRUE))
-  irisPhenotypes <- lapply(irisPhenotypes, function(x) gsub(":", "%3A", x, fixed=TRUE))
-  irisPhenotypes <- lapply(irisPhenotypes, function(x) gsub("=", "%3D%0A", x, fixed=TRUE))
-  dum <- lapply(irisPhenotypes[1:(length(irisPhenotypes)-1)],function(x) cat(paste0('%22', x,'%22%2C', sep=""), file=filename, append=TRUE))
-  cat(paste0('%22', irisPhenotypes[[length(irisPhenotypes)]],'%22',"%5D%0A", sep=""), file=filename, append=TRUE)
-  
-  api.semanticSimilarity_query <- "curl -X POST -d @a.txt 'https://kb.phenoscape.org/api/similarity/jaccard'"
-  semanticSimilarityAPIResults <- system(api.semanticSimilarity_query, intern=TRUE)
-
-  results <- fromJSON(semanticSimilarityAPIResults)
-  scores <- lapply(results$results, function(x) x$score)
-  scores <- sapply(scores, function(x) if(is.null(x)) NA else(x))
-  result_terms <- do.call(rbind, lapply(results$results, function(x) do.call(cbind, lapply(x$terms, curlUnescape))))
-  semanticSimilarityMatrix <- matrix(NA, nrow=length(irisPhenotypes), ncol=length(irisPhenotypes))
-  diag(semanticSimilarityMatrix) <- 1
-  rownames(semanticSimilarityMatrix) <- colnames(semanticSimilarityMatrix) <- curlUnescape(irisPhenotypes)
-  
-  #### if result_terms < 1 don't run this loop 
-  #### use stop() to print error message
-  if(!is.null(result_terms)){
-    if (nrow(result_terms) > 1){
-      for(i in 1:nrow(result_terms)){
-        semanticSimilarityMatrix[result_terms[i,1], result_terms[i,2]] <- semanticSimilarityMatrix[result_terms[i,2], result_terms[i,1]] <- scores[i]
-      }
-    }
-    else{
-      stop("result_terms is too small")
-    }
-  }
+  #### if result_terms < 1 don't run this loop and use stop() to print error message
+  #if(!is.null(result_terms)){
+  #  if (nrow(result_terms) > 1){
+  #    for(i in 1:nrow(result_terms)){
+  #      semanticSimilarityMatrix[result_terms[i,1], result_terms[i,2]] <- semanticSimilarityMatrix[result_terms[i,2], result_terms[i,1]] <- scores[i]
+  #    }
+  #  }
+  #  else{
+  #    stop("result_terms is too small")
+  #  }
+  #}
   
   
   rownames(semanticSimilarityMatrix) <- colnames(semanticSimilarityMatrix) <- traits

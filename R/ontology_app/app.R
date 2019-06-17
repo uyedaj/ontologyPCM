@@ -1,4 +1,3 @@
-#
 # This app returns a plot, based on user input, of traits vs taxa data from the phenoscape database
 
 library(shiny)
